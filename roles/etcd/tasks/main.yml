@@ -1,0 +1,6 @@
+- name: Set etcd Backup Directory Prefix
+  set_fact:
+    etcd_backup_prefix: "{% if etcd_backup_prefix %} {{ etcd_backup_prefix }} {% else %}/var/backups{% endif %}"
+
+- debug:
+    msg: "output {{ etcd_backup_prefix }}"
